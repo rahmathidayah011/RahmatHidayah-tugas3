@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#55AE59"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/images1" />
+
+    <TextView
+        android:id="@+id/Selamat_Datang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Selamat Datang"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/holo_blue_dark" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Selamat_Datang"
+        android:layout_margin="20dp"
+        android:background="@color/cardview_dark_background"
+        android:hint="@string/username_hint"
+        android:textColorHint="@color/white"
+        android:padding="12sp"
+        android:textSize="16sp"
+        android:inputType="textEmailAddress"
+        android:autofillHints="username"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etUsername"
+        android:layout_margin="20dp"
+        android:background="@color/cardview_dark_background"
+        android:hint="@string/password_hint"
+        android:textColorHint="@color/white"
+        android:padding="12sp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/btnLogin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="register"
+        android:layout_below="@id/etPassword"
+        android:layout_marginTop="7sp"
+        android:background="#0000"/>
+
+
+    <Button
+        android:id="@+id/btnLogin1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/cardview_dark_background"
+        android:text="LOGIN"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:padding="10dp" />
+
+</RelativeLayout>
