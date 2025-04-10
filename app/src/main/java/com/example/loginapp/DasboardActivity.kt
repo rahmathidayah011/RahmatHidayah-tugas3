@@ -1,5 +1,6 @@
 package com.example.loginapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,5 +16,12 @@ class DasboardActivity : AppCompatActivity() {
         // Inisialisasi ViewBinding
         binding = ActivityDasboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Dapatkan referensi ke tombol menggunakan ViewBinding
+        binding.button.setOnClickListener {
+            // Buat Intent untuk berpindah ke RecyclerViewActivity
+            val intent = Intent(this, RecyclerView::class.java)
+            startActivity(intent)
+        }
     }
 }

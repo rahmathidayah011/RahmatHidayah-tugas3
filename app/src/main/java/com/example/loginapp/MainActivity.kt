@@ -17,16 +17,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Tombol Login -> Pindah ke DasboardActivity
+        binding.btnLogin1.setOnClickListener {
+            val intent = Intent(this, DasboardActivity::class.java)
+            startActivity(intent)
+        }
+
         // Tombol untuk pindah ke halaman Register
-        binding.btnLogin2.setOnClickListener {
+        binding.register.setOnClickListener {
             val intent = Intent(this, RegisterActivity2::class.java)
             startActivity(intent)
-
-            // Tombol Login -> Pindah ke DasboardActivity
-            binding.btnLogin1.setOnClickListener {
-                val intent = Intent(this, DasboardActivity::class.java)
-                startActivity(intent)
-            }
         }
     }
 }
