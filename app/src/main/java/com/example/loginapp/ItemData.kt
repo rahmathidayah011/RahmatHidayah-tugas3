@@ -1,20 +1,25 @@
 package com.example.loginapp
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.loginapp.databinding.ActivityItemDataBinding
+import com.example.loginapp.model.Item
 
 class ItemData : AppCompatActivity() {
+
+    private lateinit var binding: ActivityItemDataBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_item_data)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityItemDataBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val item = intent.getParcelableExtra<Item>("item")
+
+        item?.let {
+            binding.detailImage.setImageResource(it.imageSource)
+            binding.detailTitle.text = it.imageTitle
+            binding.detailDesc.text = it.imageDesc
         }
     }
 }
