@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:src="@drawable/images1" />
@@ -29,19 +29,47 @@
         android:textColor="@android:color/holo_blue_dark" />
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/firstname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Selamat_Datang"
         android:layout_margin="20dp"
         android:background="@android:color/darker_gray"
-        android:hint="Masukkan Username"
+        android:hint="Masukkan Nama Lengkap"
+        android:textColorHint="@android:color/white"
+        android:padding="12sp"
+        android:textSize="16sp"
+        android:minHeight="48dp" />
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstname"
+        android:layout_margin="20dp"
+        android:background="@android:color/darker_gray"
+        android:hint="Masukkan Gmail"
         android:textColorHint="@android:color/white"
         android:padding="12sp"
         android:textSize="16sp"
         android:inputType="textEmailAddress"
         android:autofillHints="username"
         android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lastname"
+        android:layout_margin="20dp"
+        android:layout_marginTop="312dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="username"
+        android:background="@android:color/darker_gray"
+        android:hint="Masukkan Username"
+        android:minHeight="48dp"
+        android:padding="12sp"
+        android:textColorHint="@android:color/white"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/etPassword"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,10 +11,11 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
+        android:layout_width="227dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
+        android:contentDescription="@string/logo_description"
         android:src="@drawable/images1" />
 
     <TextView
@@ -23,7 +25,7 @@
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Forgot Password"
+        android:text="@string/forgot_password"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@android:color/holo_blue_dark" />
@@ -35,7 +37,7 @@
         android:layout_below="@id/tvForgotPasswordTitle"
         android:layout_margin="20dp"
         android:background="@color/cardview_dark_background"
-        android:hint="Enter your email"
+        android:hint="@string/hint_email"
         android:textColorHint="@color/white"
         android:padding="12sp"
         android:textSize="16sp"
@@ -43,17 +45,51 @@
         android:autofillHints="email"
         android:minHeight="48dp" />
 
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etEmail"
+        android:layout_margin="20dp"
+        android:background="@color/cardview_dark_background"
+        android:hint="Masukkan Password"
+        android:textColorHint="@android:color/white"
+        android:padding="12sp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/etComPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPassword"
+        android:layout_margin="20dp"
+        android:background="@color/cardview_dark_background"
+        android:hint="Konfirmasi Password"
+        android:textColorHint="@android:color/white"
+        android:padding="12sp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:autofillHints="password"
+        android:minHeight="48dp" />
+
     <Button
         android:id="@+id/btnResetPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/etEmail"
+        android:layout_below="@+id/etComPassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@color/cardview_dark_background"
-        android:text="RESET PASSWORD"
+        android:text="SUBMIT"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:padding="10dp" />
+
+
+
+
 
 </RelativeLayout>

@@ -28,5 +28,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity2::class.java)
             startActivity(intent)
         }
+
+        // Tombol untuk pindah ke halaman Register
+        binding.forgot.setOnClickListener {
+            val intent = Intent(this, ForgetActivity3::class.java)
+            startActivity(intent)
+        }
+
     }
 }

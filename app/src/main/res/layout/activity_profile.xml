@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ProfileActivity"
+    android:background="#F5F5F5">
+
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="450dp"
+        android:layout_height="769dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/desktop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Foto Profil -->
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/profile"
+         android:scaleType="centerCrop"
+    android:contentDescription="Foto Profil"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Nama -->
+    <TextView
+        android:id="@+id/profileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RAHMAT HIDAYAH"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FAF7F7"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Jabatan -->
+    <TextView
+        android:id="@+id/profileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mahasiswa USTJ"
+        android:textSize="14sp"
+        android:textColor="#FBFBFB"
+        app:layout_constraintTop_toBottomOf="@id/profileName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/profileTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Informasi Pribadi -->
+    <TextView
+        android:id="@+id/infoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informasi Pribadi"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#FBFBFB"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!--  -->
+    <TextView
+        android:id="@+id/profileEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Email: rahmat011hidayah.com"
+        android:textSize="14sp"
+        android:textColor="#FAFAFA"
+        app:layout_constraintTop_toBottomOf="@id/infoTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Nomor Telpon -->
+    <TextView
+        android:id="@+id/profilePhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Telepon: +62 852-4232-1035"
+        android:textSize="14sp"
+        android:textColor="#FDFBFB"
+        app:layout_constraintTop_toBottomOf="@id/profileEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <!-- alamat -->
+    <TextView
+        android:id="@+id/profileAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Alamat: Asrama Brimob Kotaraja"
+        android:textSize="14sp"
+        android:textColor="#F4F2F2"
+        app:layout_constraintTop_toBottomOf="@id/profilePhone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Media Sosial -->
+    <TextView
+        android:id="@+id/socialTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Media Sosial"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#FEFAF6F6"
+        app:layout_constraintTop_toBottomOf="@id/profileAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/profileLinkedIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="LinkedIn: linkedin.com/in/namalengkap"
+        android:textSize="14sp"
+        android:textColor="#FEFAF8F8"
+        app:layout_constraintTop_toBottomOf="@id/socialTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/profileGitHub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="GitHub: github.com/username"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/profileLinkedIn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
