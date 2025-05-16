@@ -1,48 +1,58 @@
 package com.example.loginapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
+import android.util.Patterns
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.loginapp.databinding.ActivityForget3Binding
+import com.google.firebase.auth.FirebaseAuth
 
 class ForgetActivity3 : AppCompatActivity() {
+    private lateinit var binding: ActivityForget3Binding
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_forget3)
+        binding = ActivityForget3Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Atur padding window
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        firebaseAuth = FirebaseAuth.getInstance()
 
-        // Hubungkan dengan komponen XML
-        val emailEditText = findViewById<EditText>(R.id.etEmail)
-        val passwordEditText = findViewById<EditText>(R.id.etPassword)
-        val confirmPasswordEditText = findViewById<EditText>(R.id.etComPassword)
-        val submitButton = findViewById<Button>(R.id.btnResetPassword)
+        binding.btnResetPassword.setOnClickListener {
+            val email = binding.email.text.toString()
 
-        // Handle klik tombol SUBMIT
-        submitButton.setOnClickListener {
-            val email = emailEditText.text.toString().trim()
-            val password = passwordEditText.text.toString()
-            val confirmPassword = confirmPasswordEditText.text.toString()
-
-            if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                Toast.makeText(this, "Semua field harus diisi", Toast.LENGTH_SHORT).show()
-            } else if (password != confirmPassword) {
-                Toast.makeText(this, "Password tidak cocok", Toast.LENGTH_SHORT).show()
-            } else {
-                // Di sini kamu bisa menambahkan logika reset password, seperti API call, dsb
-                Toast.makeText(this, "Password berhasil direset untuk $email", Toast.LENGTH_LONG).show()
-                // Contoh: finish() untuk kembali ke halaman login
+            if (email.isEmpty()) {
+                binding.email.error = "Email tidak boleh kosong"
+                binding.email.requestFocus()
+                return@setOnClickListener
             }
+
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.email.error = "Format email tidak valid"
+                binding.email.requestFocus()
+                return@setOnClickListener
+            }
+
+            firebaseAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(
+                            this,
+                            "Email reset password telah dikirim",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Gagal mengirim email reset password: ${task.exception?.message}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
         }
     }
 }
+

@@ -31,13 +31,13 @@
         android:textColor="@android:color/holo_blue_dark" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvForgotPasswordTitle"
         android:layout_margin="20dp"
         android:background="@color/cardview_dark_background"
-        android:hint="@string/hint_email"
+        android:hint="Masukkan Email"
         android:textColorHint="@color/white"
         android:padding="12sp"
         android:textSize="16sp"
@@ -45,51 +45,16 @@
         android:autofillHints="email"
         android:minHeight="48dp" />
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etEmail"
-        android:layout_margin="20dp"
-        android:background="@color/cardview_dark_background"
-        android:hint="Masukkan Password"
-        android:textColorHint="@android:color/white"
-        android:padding="12sp"
-        android:textSize="16sp"
-        android:inputType="textPassword"
-        android:autofillHints="password"
-        android:minHeight="48dp" />
-
-    <EditText
-        android:id="@+id/etComPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
-        android:layout_margin="20dp"
-        android:background="@color/cardview_dark_background"
-        android:hint="Konfirmasi Password"
-        android:textColorHint="@android:color/white"
-        android:padding="12sp"
-        android:textSize="16sp"
-        android:inputType="textPassword"
-        android:autofillHints="password"
-        android:minHeight="48dp" />
-
     <Button
         android:id="@+id/btnResetPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etComPassword"
+        android:layout_below="@+id/email"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@color/cardview_dark_background"
-        android:text="SUBMIT"
+        android:text="Kirim link"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:padding="10dp" />
-
-
-
-
-
 </RelativeLayout>
